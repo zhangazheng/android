@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">呵呵</string>
-    <string name="hello_world">你好，鳄鱼酱!</string>
+    <string name="app_name">第一个项目</string>
+    <string name="edit_message">请输入文本</string>
+    <string name="button_send">发送</string>
     <string name="action_settings">设置</string>
-    <string name="edit_message">TODO</string>
+    <string name="title_activity_main">主视图</string>
 
 </resources>
