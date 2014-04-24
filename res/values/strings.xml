@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">呵呵</string>
+    <string name="hello_world">你好，鳄鱼酱!</string>
+    <string name="action_settings">设置</string>
+    <string name="edit_message">TODO</string>
+
+</resources>
