@@ -3,10 +3,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="org.fitark.helloworld.MainActivity" >
 
+    <!-- Search, should appear as action button -->
+    <item
+        android:id="@+id/action_search"
+        android:icon="@drawable/ic_launcher"
+        android:showAsAction="ifRoom"
+        android:title="@string/action_search"/>
+    <!-- Settings, should always be in the overflow -->
     <item
         android:id="@+id/action_settings"
-        android:orderInCategory="100"
-        android:title="@string/action_settings"
-        app:showAsAction="never"/>
+        android:showAsAction="never"
+        android:title="@string/action_settings"/>
 
 </menu>
