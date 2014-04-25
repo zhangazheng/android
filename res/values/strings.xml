@@ -8,5 +8,8 @@
     <string name="title_activity_main">主视图</string>
     <string name="title_activity_display_message">我的消息</string>
     <string name="action_search">搜索</string>
+    <string name="title_activity_collection_demo">CollectionDemoActivity</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="pager">pager</string>
 
 </resources>

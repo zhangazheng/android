@@ -30,6 +30,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="org.fitark.helloworld.MainActivity" />
         </activity>
+        <activity
+            android:name="org.fitark.helloworld.CollectionDemoActivity"
+            android:label="@string/title_activity_collection_demo"
+            android:parentActivityName="org.fitark.helloworld.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="org.fitark.helloworld.MainActivity" />
+        </activity>
     </application>
 
 </manifest>
