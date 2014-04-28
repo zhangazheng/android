@@ -2,19 +2,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal" >
+    android:orientation="vertical" >
 
     <EditText
         android:id="@+id/edit_message"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="2"
+        android:ems="10"
         android:hint="@string/edit_message" />
 
     <Button
+        android:id="@+id/button_send"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/button_send" 
-        android:onClick="sendMessage"/>
+        android:onClick="sendMessage"
+        android:text="@string/button_send" />
+
+    <Button
+        android:id="@+id/backupRestoreAcitvity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="startBackupRestoreActivity"
+        android:text="@string/backupRestoreActivity" />
 
 </LinearLayout>

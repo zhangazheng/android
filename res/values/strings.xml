@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">第一个项目</string>
+    <string name="app_name">我的安卓之路</string>
     <string name="edit_message">请输入文本</string>
     <string name="button_send">发送</string>
     <string name="action_settings">设置</string>
@@ -11,5 +11,15 @@
     <string name="title_activity_collection_demo">CollectionDemoActivity</string>
     <string name="hello_world">Hello world!</string>
     <string name="pager">pager</string>
+    <string name="fav_color">请选择一个你喜欢的颜色</string>
+    <string name="blue_label">蓝色</string>
+    <string name="red_label">红色</string>
+    <string name="yellow_label">黄色</string>
+    <string name="hobby">爱好</string>
+    <string name="hobby_basketball">篮球</string>
+    <string name="hobby_football">足球</string>
+    <string name="hobby_sing">唱歌</string>
+    <string name="title_activity_backup_restore">BackupRestoreActivity</string>
+    <string name="backupRestoreActivity">启动BackupRestoreActivity</string>
 
 </resources>

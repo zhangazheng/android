@@ -18,13 +18,9 @@ public class MainActivity extends ActionBarActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
-		//设置是否开启左上按钮
-		//getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-		if (savedInstanceState == null) {
-			getSupportFragmentManager().beginTransaction()
-					.add(R.id.container, new PlaceholderFragment()).commit();
-		}
+		setContentView(R.layout.fragment_main);
+		// 设置是否开启左上按钮
+		// getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 	}
 
 	@Override
@@ -43,10 +39,10 @@ public class MainActivity extends ActionBarActivity {
 		// as you specify a parent activity in AndroidManifest.xml.
 		switch (item.getItemId()) {
 		case R.id.action_search:
-			//openSearch();
+			// openSearch();
 			return true;
 		case R.id.action_settings:
-			//openSettings();
+			// openSettings();
 			return true;
 		default:
 			return super.onOptionsItemSelected(item);
@@ -76,6 +72,11 @@ public class MainActivity extends ActionBarActivity {
 		EditText editText = (EditText) findViewById(R.id.edit_message);
 		String message = editText.getText().toString();
 		intent.putExtra(EXTRA_MESSAGE, message);
+		startActivity(intent);
+	}
+
+	public void startBackupRestoreActivity(View view) {
+		Intent intent = new Intent(this, BackupRestoreActivity.class);
 		startActivity(intent);
 	}
 }

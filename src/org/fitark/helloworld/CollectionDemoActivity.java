@@ -16,12 +16,7 @@ public class CollectionDemoActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_collection_demo);
-
-		if (savedInstanceState == null) {
-			getFragmentManager().beginTransaction()
-					.add(R.id.container, new PlaceholderFragment()).commit();
-		}
+		//setContentView(R.layout.activity_collection_demo);
 	}
 
 	@Override

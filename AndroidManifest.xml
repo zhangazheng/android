@@ -38,6 +38,10 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="org.fitark.helloworld.MainActivity" />
         </activity>
+        <activity
+            android:name="org.fitark.helloworld.BackupRestoreActivity"
+            android:label="@string/title_activity_backup_restore" >
+        </activity>
     </application>
 
 </manifest>
