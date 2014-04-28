@@ -40,8 +40,21 @@
         </activity>
         <activity
             android:name="org.fitark.helloworld.BackupRestoreActivity"
-            android:label="@string/title_activity_backup_restore" >
+            android:label="@string/title_activity_backup_restore"
+            android:parentActivityName="org.fitark.helloworld.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="org.fitark.helloworld.MainActivity" />
+        </activity>
+        <activity
+            android:name="org.fitark.helloworld.ContactManagerActivity"
+            android:label="@string/title_activity_contact_manager"
+            android:parentActivityName="org.fitark.helloworld.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="org.fitark.helloworld.MainActivity" />
         </activity>
     </application>
+    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>

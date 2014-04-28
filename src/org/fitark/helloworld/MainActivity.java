@@ -10,6 +10,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 
 public class MainActivity extends ActionBarActivity {
@@ -19,6 +20,13 @@ public class MainActivity extends ActionBarActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.fragment_main);
+		Button startContactManageBtn = (Button) findViewById(R.id.contactManageActivity);
+		startContactManageBtn.setOnClickListener(new Button.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				startContactManageActivity();
+			}
+		});
 		// 设置是否开启左上按钮
 		// getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 	}
@@ -67,7 +75,7 @@ public class MainActivity extends ActionBarActivity {
 	}
 
 	/** Called when the user clicks the Send button */
-	public void sendMessage(View view) {
+	protected void sendMessage(View view) {
 		Intent intent = new Intent(this, DisplayMessageActivity.class);
 		EditText editText = (EditText) findViewById(R.id.edit_message);
 		String message = editText.getText().toString();
@@ -75,8 +83,14 @@ public class MainActivity extends ActionBarActivity {
 		startActivity(intent);
 	}
 
-	public void startBackupRestoreActivity(View view) {
+	protected void startBackupRestoreActivity(View view) {
 		Intent intent = new Intent(this, BackupRestoreActivity.class);
 		startActivity(intent);
+	}
+
+	protected void startContactManageActivity() {
+		Intent intent = new Intent(this, ContactManagerActivity.class);
+		startActivity(intent);
+
 	}
 }

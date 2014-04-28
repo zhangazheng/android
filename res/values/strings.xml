@@ -21,5 +21,9 @@
     <string name="hobby_sing">唱歌</string>
     <string name="title_activity_backup_restore">BackupRestoreActivity</string>
     <string name="backupRestoreActivity">启动BackupRestoreActivity</string>
+    <string name="title_activity_contact_manager">联系人管理</string>
+    <string name="contactManageActivity">启动contactManageActivity</string>
+    <string name="show_invisible">显示不可见的联系人</string>
+    <string name="add_contact">添加联系人</string>
 
 </resources>

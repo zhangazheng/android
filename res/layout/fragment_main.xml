@@ -24,5 +24,10 @@
         android:layout_height="wrap_content"
         android:onClick="startBackupRestoreActivity"
         android:text="@string/backupRestoreActivity" />
+     <Button
+        android:id="@+id/contactManageActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/contactManageActivity" />
 
 </LinearLayout>
