@@ -1,6 +1,7 @@
 package org.fitark.helloworld;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBarActivity;
@@ -10,6 +11,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -27,8 +29,41 @@ public class MainActivity extends ActionBarActivity {
 				startContactManageActivity();
 			}
 		});
+		((Button) findViewById(R.id.showPDF))
+				.setOnClickListener(new Button.OnClickListener() {
+					@Override
+					public void onClick(View v) {
+						showPDF();
+					}
+
+				});
+		((Button) findViewById(R.id.showImage))
+		.setOnClickListener(new Button.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				showImage();
+			}
+
+		});
 		// 设置是否开启左上按钮
 		// getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+	}
+
+	private void showPDF() {
+		Uri uri = Uri
+				.parse("http://fitark.org:7500/files/93d75dc1269e49d593f04195a875d59d.pdf");
+		Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+		startActivity(intent);
+		WebView webview = new WebView(this);
+		setContentView(webview);
+	}
+	private void showImage() {
+		Uri uri = Uri
+				.parse("http://fitark.org:7500/files/93d75dc1269e49d593f04195a875d59d.png");
+		Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+		startActivity(intent);
+		WebView webview = new WebView(this);
+		setContentView(webview);
 	}
 
 	@Override
@@ -75,7 +110,7 @@ public class MainActivity extends ActionBarActivity {
 	}
 
 	/** Called when the user clicks the Send button */
-	protected void sendMessage(View view) {
+	public void sendMessage(View view) {
 		Intent intent = new Intent(this, DisplayMessageActivity.class);
 		EditText editText = (EditText) findViewById(R.id.edit_message);
 		String message = editText.getText().toString();
@@ -83,7 +118,7 @@ public class MainActivity extends ActionBarActivity {
 		startActivity(intent);
 	}
 
-	protected void startBackupRestoreActivity(View view) {
+	public void startBackupRestoreActivity(View view) {
 		Intent intent = new Intent(this, BackupRestoreActivity.class);
 		startActivity(intent);
 	}

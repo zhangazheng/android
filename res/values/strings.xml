@@ -25,5 +25,7 @@
     <string name="contactManageActivity">启动contactManageActivity</string>
     <string name="show_invisible">显示不可见的联系人</string>
     <string name="add_contact">添加联系人</string>
+    <string name="showPDF">显示PDF</string>
+    <string name="showImage">显示图片</string>
 
 </resources>

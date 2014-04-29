@@ -29,5 +29,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/contactManageActivity" />
+     <Button
+        android:id="@+id/showPDF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/showPDF" />
+     <Button
+        android:id="@+id/showImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/showImage" />  
 
 </LinearLayout>
