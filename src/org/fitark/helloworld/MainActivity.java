@@ -38,13 +38,14 @@ public class MainActivity extends ActionBarActivity {
 
 				});
 		((Button) findViewById(R.id.showImage))
-		.setOnClickListener(new Button.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				showImage();
-			}
+				.setOnClickListener(new Button.OnClickListener() {
+					@Override
+					public void onClick(View v) {
+						showImage();
+					}
 
-		});
+				});
+
 		// 设置是否开启左上按钮
 		// getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 	}
@@ -57,6 +58,7 @@ public class MainActivity extends ActionBarActivity {
 		WebView webview = new WebView(this);
 		setContentView(webview);
 	}
+
 	private void showImage() {
 		Uri uri = Uri
 				.parse("http://fitark.org:7500/files/93d75dc1269e49d593f04195a875d59d.png");
@@ -127,5 +129,10 @@ public class MainActivity extends ActionBarActivity {
 		Intent intent = new Intent(this, ContactManagerActivity.class);
 		startActivity(intent);
 
+	}
+
+	public void playVideo(View view) {
+		Intent intent = new Intent(this, PlayVideoActivity.class);
+		startActivity(intent);
 	}
 }

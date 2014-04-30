@@ -54,6 +54,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="org.fitark.helloworld.MainActivity" />
         </activity>
+        <activity
+            android:name="org.fitark.helloworld.PlayVideoActivity"
+            android:hardwareAccelerated="true"
+            android:label="@string/title_activity_play_video" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="org.fitark.helloworld.MainActivity" />
+        </activity>
     </application>
 
     <uses-permission android:name="android.permission.INTERNET" />

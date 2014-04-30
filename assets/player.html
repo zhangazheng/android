@@ -1,0 +1,72 @@
+<html>
+<script type="text/javascript">  
+var playover=true;//直接播放  
+var total;//定义flash影片总帧数  
+var frame_number=-1;//定义flash影片当前帧数  
+  
+//动态显示播放影片的当前帧/总帧数(进度条显示)  
+function showcount(){  
+    //已测可用CallJava.consoleFlashProgress(5);  
+    var num=1+fmovie.CurrentFrame();  
+    var millisec=150;  
+    if(num<frame_number || num==total)  
+        {  
+        CallJava.consoleFlashProgress(100);  
+        millisec=1000;  
+    }  
+    else  
+        CallJava.consoleFlashProgress(100*(num/total));  
+  
+    frame_number=num;  
+    //geolo.innerText = "n/m: "+frame_number+"/"+total  
+    setTimeout(showcount,millisec);  
+}  
+function isLoad(){  
+    if(fmovie.PercentLoaded()==100)frame_number=0;  
+}  
+//加载影片   
+function Load(){  
+	setVideoSrc(CallJava.getVideoSrc()));
+    if(frame_number>=0) {  
+        total = fmovie.TotalFrames();  
+        if(playover && total>1) Play();  
+        CallJava.FlashLoaded();  
+        setTimeout(showcount,100);  
+    }else {  
+        setTimeout(Load,100);  
+        setTimeout(isLoad,50);  
+    }  
+} 
+
+function setVideoSrc(str){
+	document.getElementById('fmovie').src ="playback.swf?src="+ str;
+} 
+//播放影片   
+function Play(){  
+    playover=true;   
+    fmovie.Play();  
+}  
+//暂停播放  
+function Pause(){  
+    fmovie.StopPlay();  
+}  
+  
+//转到指定帧  
+function PlayLoop(){  
+    alert("playloop!");   
+    //fmovie.rewind();  
+    //fmovie.gotoframe(0);  
+}  
+  
+//影片高宽  
+function SetWH(x,y){  
+    var m=document.getElementById("fmovie");  
+    m.height=y;//m.width=x;  
+}  
+setTimeout(Load,100);  
+</script>
+<body> 
+<embed width="100%" height=400 id="fmovie" name="plugin" src="http://fitark.org:8082/playback.swf?src="+Request.QueryString('src')+" type="application/x-shockwave-flash">
+<div id="info"></div>
+</body>
+</html> 

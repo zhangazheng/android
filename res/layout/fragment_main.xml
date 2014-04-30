@@ -24,20 +24,30 @@
         android:layout_height="wrap_content"
         android:onClick="startBackupRestoreActivity"
         android:text="@string/backupRestoreActivity" />
-     <Button
+
+    <Button
         android:id="@+id/contactManageActivity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/contactManageActivity" />
-     <Button
+
+    <Button
         android:id="@+id/showPDF"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/showPDF" />
-     <Button
+
+    <Button
         android:id="@+id/showImage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/showImage" />  
+        android:text="@string/showImage" />
+
+    <Button
+        android:id="@+id/showFlv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="playVideo"
+        android:text="@string/showFlv" />
 
 </LinearLayout>
