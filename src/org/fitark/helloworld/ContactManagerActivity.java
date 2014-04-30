@@ -75,7 +75,7 @@ public class ContactManagerActivity extends Activity {
 							"photo" };
 					int[] to = new int[] { R.id.name, R.id.home_address,
 							R.id.photo };
-					JSONArrayAdapter adapter = new JSONArrayAdapter(
+					final JSONArrayAdapter adapter = new JSONArrayAdapter(
 							ContactManagerActivity.this, ja,
 							R.layout.contact_list, from, to);
 					adapter.setViewBinder(new ViewBinder() {

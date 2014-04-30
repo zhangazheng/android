@@ -9,6 +9,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+import org.fitark.helloworld.R;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -20,15 +21,30 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
 public class JSONArrayAdapter extends SimpleAdapter {
 
 	private static Bitmap bmp;
+	private static LayoutInflater mInflater;
+	private static ListView mContactList ;
 
 	public JSONArrayAdapter(Context context, JSONArray jsonArray, int resource,
 			String[] from, int[] to) {
 		super(context, getListFromJsonArray(jsonArray), resource, from, to);
+		mInflater = LayoutInflater.from(context);
+	}
+	@Override
+	public View getView(int position, View convertView, ViewGroup parent) {
+		if(convertView == null){
+			convertView = mInflater.inflate(R.layout.contact_list, null);
+		}
+		mContactList = (ListView) parent;
+		return convertView;
 	}
 
 	static ArrayList<Map<String, Object>> list;
@@ -47,9 +63,7 @@ public class JSONArrayAdapter extends SimpleAdapter {
 				while (iter.hasNext()) {
 					String currentKey = (String) iter.next();
 					if (currentKey.equals("photo")) {
-						map.put(currentKey,
-								getBitmap(jo.getString(currentKey).toString(),
-										i));
+						getBitmap(jo.getString(currentKey).toString(), i);
 					} else {
 						map.put(currentKey, jo.getString(currentKey));
 					}
@@ -73,6 +87,9 @@ public class JSONArrayAdapter extends SimpleAdapter {
 				Map<String, Object> m = (HashMap<String, Object>) list.get(msg
 						.getData().getInt("i"));
 				m.put("photo", bmp);
+				((JSONArrayAdapter) mContactList.getAdapter())
+						.notifyDataSetChanged();
+
 			}
 		};
 		new Thread(new Runnable() {
